@@ -2,3 +2,21 @@
 .vs/
 
 Launcher/bin/
+
+Launcher/obj/
+
+SharedModels/obj/
+
+UiManager/obj/
+
+WebsocketServer/obj/
+
+SharedModels/bin/
+
+TestUi/bin/
+
+TestUi/obj/
+
+UiManager/bin/
+
+WebsocketServer/bin/
