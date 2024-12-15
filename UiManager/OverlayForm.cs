@@ -34,7 +34,12 @@ namespace UiManager
 		{
 			InitializeComponent();
 			CustomInitialize(serverToUi, uiToServer);
-			SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+
+            var leftMostScreen = Screen.AllScreens.OrderBy(s => s.Bounds.X).First();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = leftMostScreen.Bounds.Location;
+
+            SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
 		}
 
 		private void CustomInitialize(BlockingCollection<ServerToUiMessage> serverToUi, BlockingCollection<UiToServerMessage> uiToServer)
